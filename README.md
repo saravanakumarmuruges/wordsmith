@@ -1,0 +1,2 @@
+# wordsmith
+Personal blog REPO
