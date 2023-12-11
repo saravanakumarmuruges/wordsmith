@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+{% load static%}
+<html>
+	<head>
+        {% block title %}
+		    <h1>{{title}}</h1>
+		{% endblock %}
+        <meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'home/css/main.css' %}" />
+		<noscript><link rel="stylesheet" href="{% static 'home/css/noscript.css' %}" /></noscript>
+	</head>
+	<body>
+        <div>
+            {% block meta%}
+                <h2>Author : {{author}}</h2>
+                <h3>Genre : {{genre}}</h3>
+                <h4>Created Date & Time : {{created_time}}</h4>
+            {% endblock %}
+        </div>
+        <div>
+            {% block content %}
+                <p>{{content}}</p>
+            {% endblock %}
+        </div>
+	</body>
+	</html>
+</html>

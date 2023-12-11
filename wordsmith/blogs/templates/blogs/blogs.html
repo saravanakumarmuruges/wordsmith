@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+{% load static%}
+<html>
+	<head>
+		<title>SaM's Tale</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'home/css/main.css' %}" />
+		<noscript><link rel="stylesheet" href="{% static 'home/css/noscript.css' %}" /></noscript>
+	</head>
+	<body>
+		<table border="1">
+			<thead>
+				<tr>
+					<th>Blog ID</th>
+					<th>Title</th>
+					<th>Genre</th>
+					<th>Author Name</th>
+					<th>Created Date & Time</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for item in data %}
+					<tr>
+						<td><a href="{% url 'blog_post' item.id %}">{{ item.id}}</td>
+						<td><a href="{% url 'blog_post' item.id %}">{{ item.title }}</td>
+						<td>{{ item.genre }}</td>
+						<td>{{ item.author_name }}</td>
+						<td>{{ item.created_time }}</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</body>
+	</html>
+</html>
